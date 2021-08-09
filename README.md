@@ -18,8 +18,8 @@ My first project using HTML, CSS, and Javascript fundamentals. Creating a Pokemo
 
 **MVP/Project Requirements**
 
-- [ ] Creating new Repo in GitHub
-- [ ] Include Markdown
+- [x] Creating new Repo in GitHub
+- [x] Include Markdown
 - [ ] Utlize flexbox or grid
 - [ ] Two HTML pages to navigate through
 - [ ] Include two event handlers
