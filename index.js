@@ -17,7 +17,6 @@ const typhlosion = {
     }
   ]
 }
-
 //--CHARIZARD
 const charizard = {
   name: 'charizard',
@@ -34,41 +33,37 @@ const charizard = {
     }
   ]
 }
-//Created OnClick function in HTML to when user selects pokemon, will display HP value
-let displayTyphHp = () => {
-  let newP = document.createElement('p')
-  let addnewP = document.getElementById('displayHP1').appendChild(newP)
-  return (addnewP.innerText = `${typhlosion.healthPoints}`)
-}
-let displayCharHp = () => {
-  let newP = document.createElement('p')
-  let addnewP = document.getElementById('displayHP2').appendChild(newP)
-  return (addnewP.innerText = `${charizard.healthPoints}`)
-}
-
-//start button function
 function startGameButton() {
   // selecting id containing start button
   const button = document.getElementById('startButton')
 
-  //function that will alert user that game started when clicked on
+  //function that will promt user to make game choice
   const gameStart = function () {
-    alert('Game Start!')
+    let buttonP = document.getElementById('startP')
+    buttonP.innerText = 'Game Start! Player 1: Pick your pokemon below'
   }
   //event listener
-  button.addEventListener('click', gameStart)
+  const button1 = button.addEventListener('click', gameStart)
+  turn = 1
 }
+startGameButton()
 
-//restart game button function
-function restartGameButton() {
-  // selecting id containing start button
-  const button = document.getElementById('restartButton')
-
-  //function that will alert user that game started when clicked on
-  const gameRestart = function () {
-    alert('New game!')
+//function containing event listner that will display HP value when user selects pokemon
+function choosePokemon1() {
+  const button = document.getElementById('typhButton')
+  function typhP() {
+    let p = document.getElementById('displayHP1')
+    p.innerText = `HP: ${typhlosion.healthPoints}`
   }
-  //event listener
-  button.addEventListener('click', gameRestart)
+  button.addEventListener('click', typhP)
 }
-restartGameButton()
+choosePokemon1()
+function choosePokemon2() {
+  const button = document.getElementById('charButton')
+  function charP() {
+    let p = document.getElementById('displayHP2')
+    p.innerText = `HP: ${charizard.healthPoints}`
+  }
+  button.addEventListener('click', charP)
+}
+choosePokemon2()

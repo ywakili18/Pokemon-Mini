@@ -1,1 +1,8 @@
-
+body {
+  background-color: darkred;
+  color: black;
+}
+button {
+  background-color: black;
+  color: white;
+}
