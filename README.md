@@ -68,3 +68,4 @@ What my goal is during this first attempt is to get game logic to work and refra
 **_Credits_**
 
 [Github markdown lessons](https://github.com/SEI-R-7-26/u1_hw_markdown)
+[class list](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)

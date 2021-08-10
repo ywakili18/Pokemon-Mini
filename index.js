@@ -1,69 +1,52 @@
+let turn = false
 //-- POKEMON DATA
 //--TYPHLOSION
 const typhlosion = {
   name: 'Typhlosion',
   healthPoints: 500,
   //nested array with object containing both Pokemon move name and damage data.
-  moveSet: [
-    //Flamethrower data
-    {
-      name: 'Flamethrower',
-      power: 80
-    },
-    //Eruption data
-    {
-      name: 'Eruption',
-      power: 100
-    }
-  ]
+  moveSet: {
+    flamethrower: 80,
+    eruption: 100
+  }
 }
 //--CHARIZARD
 const charizard = {
   name: 'charizard',
   healthPoints: 510,
   //Array containing object with Pokemon move name and damage data.
-  moveSet: [
-    {
-      name: 'Dragon Claw',
-      power: 80
-    },
-    {
-      name: 'Blast Burn',
-      power: 100
-    }
-  ]
-}
-function startGameButton() {
-  // selecting id containing start button
-  const button = document.getElementById('startButton')
-
-  //function that will promt user to make game choice
-  const gameStart = function () {
-    let buttonP = document.getElementById('startP')
-    buttonP.innerText = 'Game Start! Player 1: Pick your pokemon below'
+  moveSet: {
+    'Dragon Claw': 80,
+    'Blast Burn': 100
   }
-  //event listener
-  const button1 = button.addEventListener('click', gameStart)
-  turn = 1
 }
-startGameButton()
+
+// selecting id containing start button
+const startButton = document.getElementById('startButton')
+//function that will promt user to make game choice
+const gameStart = function () {
+  let buttonP = document.getElementById('startP')
+  buttonP.innerText = 'Game Start! Player 1: Pick your pokemon below'
+  const selectTyph = document.getElementById('typh')
+  selectTyph.classList.remove('hiddenPoke')
+  const selectChar = document.getElementById('char')
+  selectChar.classList.remove('hiddenPoke')
+}
+//event listener
+startButton.addEventListener('click', gameStart)
 
 //function containing event listner that will display HP value when user selects pokemon
-function choosePokemon1() {
-  const button = document.getElementById('typhButton')
-  function typhP() {
-    let p = document.getElementById('displayHP1')
-    p.innerText = `HP: ${typhlosion.healthPoints}`
-  }
-  button.addEventListener('click', typhP)
+//typhlosion
+function pokeChoice(element, move, poke) {
+  element.innerText = `You choose ${poke.name} 
+  HP: ${poke.healthPoints}`
+
+  // const selectTyphDiv = document.getElementById('typh')
+  // const showTyphHP = function () {
+  //   let typhClick = document.getElementById('displayHP1')
+  // }
+  // const x = selectTyphDiv.addEventListener('click', showTyphHP)
 }
-choosePokemon1()
-function choosePokemon2() {
-  const button = document.getElementById('charButton')
-  function charP() {
-    let p = document.getElementById('displayHP2')
-    p.innerText = `HP: ${charizard.healthPoints}`
-  }
-  button.addEventListener('click', charP)
-}
-choosePokemon2()
+pokeChoice()
+
+//make poke choices above to disappear

@@ -6,3 +6,7 @@ button {
   background-color: black;
   color: white;
 }
+/* to hide clickable div only when user starts game */
+.hiddenPoke {
+  display: none;
+}
