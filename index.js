@@ -1,6 +1,4 @@
 //-- POKEMON DATA
-//Listed below is object containing two pokemon with game data.
-
 //--TYPHLOSION
 const typhlosion = {
   name: 'Typhlosion',
@@ -23,7 +21,7 @@ const typhlosion = {
 //--CHARIZARD
 const charizard = {
   name: 'charizard',
-  healthPoints: 500,
+  healthPoints: 510,
   //Array containing object with Pokemon move name and damage data.
   moveSet: [
     {
@@ -35,7 +33,17 @@ const charizard = {
       power: 100
     }
   ]
-  //image associated with mon
+}
+//Created OnClick function in HTML to when user selects pokemon, will display HP value
+let displayTyphHp = () => {
+  let newP = document.createElement('p')
+  let addnewP = document.getElementById('displayHP1').appendChild(newP)
+  return (addnewP.innerText = `${typhlosion.healthPoints}`)
+}
+let displayCharHp = () => {
+  let newP = document.createElement('p')
+  let addnewP = document.getElementById('displayHP2').appendChild(newP)
+  return (addnewP.innerText = `${charizard.healthPoints}`)
 }
 
 //start button function
@@ -50,7 +58,6 @@ function startGameButton() {
   //event listener
   button.addEventListener('click', gameStart)
 }
-startGameButton()
 
 //restart game button function
 function restartGameButton() {
