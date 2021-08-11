@@ -7,31 +7,32 @@
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
+
 <body>
   <!-- START BUTTON -->
   <div>
     <button id='startButton'>Start Game!</button>
     <p id= 'startP'></p>
   </div>
+  
  <!-- DISPLAY TYPHLOSION NAME AND MOVESET -->
 <div id='typh' class='hiddenPoke' >
   <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
   AND POKEMON NAME -->
-  <p id='TyphlosionID' onclick="pokeChoice(this, null, 'Typhlosion')">Typhlosion</p>
-  <p>Flamethrower</p>
-  <p>Eruption</p>
+  <p id='TyphlosionID' onclick="pokeChoice(this,'Typhlosion')">Typhlosion</p>
+  <p id='hitPoints'></p>
+  <p id= 'Flamethrower'>Flamethrower</p>
 </div>
+
 <br>
 <hr>
+
 <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
   AND POKEMON NAME -->
 <div id='char' class='hiddenPoke'>
-  <p id='CharizardID' onclick="pokeChoice(this, null, 'Charizard')">Charizard</p>
-  <p>Dragon Claw</p>
-  <p>Blast Burn</p>
+  <p id='CharizardID' onclick="pokeChoice(this, 'Charizard')">Charizard</p>
+  <p id= 'Fire Fang'>Fire Fang</p>
 </div>
-
-
 
 
   <script src="index.js"></script>
