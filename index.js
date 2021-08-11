@@ -62,7 +62,7 @@ function pokeChoice(element, pokeName) {
 
     //Selecting ID based upon what user Pokemon clicks first
     const pokemonID = document.getElementById(`${pokemon}ID`)
-    //Selecting ID containing hitpoints p tag
+    //Selecting section tags containing hitpoints
     const hitPoints = document.getElementById('hitPoints')
     //Selecting flamethrower ID containing move
     const selectFlameP = document.getElementById('Flamethrower')
@@ -71,6 +71,7 @@ function pokeChoice(element, pokeName) {
     //Variable containing HP value based on user choice
     let pokeHP = 500
     let enemyHP = 500
+    ////////////////////////////////////
     if (pokeName !== pokemon) {
       //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION. WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
       playersChoice.player2 = poke
@@ -80,19 +81,20 @@ function pokeChoice(element, pokeName) {
       //SELECTING POKEMON MOVE NAME AND ADDING TEXT DESCRIBING ACTION
       const flameThrower = function () {
         selectFlameP.innerText = `You chose Flamethrower!`
-        describeHP = hitPoints.innerText = `HP: ${pokeHP - 80}`
+        describeHP = hitPoints.innerText = `HP: ${[pokeHP] - 80}`
       }
       selectFlameP.addEventListener('click', flameThrower)
-    } else {
+    }
+    //////////////////////////////
+    else {
       //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION. WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
       playersChoice.player1 = poke
       pokemonID.innerText = `Player 1 chooses: ${pokemon}`
-      let describeHP = (hitPoints.innerText = `HP: ${pokeHP}`)
-
+      let describeHP2 = (hitPoints.innerText = `HP: ${pokeHP}`)
       //SELECTING POKEMON MOVE NAME AND ADDING TEXT DESCRIBING ACTION
       const fireFang = function () {
         selectfireFang.innerText = `You chose Fire Fang!`
-        describeHP = hitPoints.innerText = `HP: ${enemyHP - 80}`
+        describeHP2 = hitPoints.innerText = `HP: ${enemyHP - 80}`
       }
       selectfireFang.addEventListener('click', fireFang)
     }

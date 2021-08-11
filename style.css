@@ -1,12 +1,26 @@
 body {
-  background-color: darkred;
-  color: black;
+  background-color: #ffba08;
+  color: #d00000;
+  font-family: 'Press Start 2P', cursive;
+}
+img {
+  width: 250px;
+  margin: auto 0;
 }
 button {
-  background-color: black;
-  color: white;
+  display: inline;
+  border-style: groove;
+  background-color: #f48c06;
+  color: #d00000;
+  padding: 20px;
+  width: auto;
+  font-size: xx-large;
+  font-family: 'Press Start 2P', cursive;
 }
 /* to hide clickable div only when user starts game */
 .hiddenPoke {
   display: none;
+}
+#centerDiv {
+  text-align: center;
 }

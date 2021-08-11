@@ -5,12 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 
 <body>
+  <nav><img src="https://i.ytimg.com/vi/CyXnN7NuqQo/maxresdefault.jpg" alt=""></nav>
   <!-- START BUTTON -->
-  <div>
+  <div id ='centerDiv'>
     <button id='startButton'>Start Game!</button>
     <p id= 'startP'></p>
   </div>
@@ -26,11 +30,12 @@
 
 <br>
 <hr>
-
-<!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
-  AND POKEMON NAME -->
+<!-- DISPLAY CHARIZARD NAME AND MOVESET -->
 <div id='char' class='hiddenPoke'>
+  <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
+  AND POKEMON NAME -->
   <p id='CharizardID' onclick="pokeChoice(this, 'Charizard')">Charizard</p>
+  <p id='hitPoints'></p>
   <p id= 'Fire Fang'>Fire Fang</p>
 </div>
 
