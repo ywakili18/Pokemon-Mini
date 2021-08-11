@@ -1,7 +1,6 @@
 //GLOBAL VARIABLES
-let playerOneTurn = 1
+let turn = null
 const pokemons = ['Typhlosion', 'Charizard']
-const moveSet1 = ['Flamethrower', 'Eruption', 'Dragon Claw', 'Blast Burn']
 //OBJECT STORING PLAYER CHOICE
 playersChoice = {
   player1: null,
@@ -12,22 +11,13 @@ playersChoice = {
 const pokemonObject = {
   Typhlosion: {
     healthPoints: 500,
-    //nested array with object containing both Pokemon move name and damage data.
-    moveSet: {
-      Flamethrower: 80,
-      Eruption: 100
-    }
+    moveSet: 'Flamethrower'
   },
   Charizard: {
-    healthPoints: 500,
-    //Array containing object with Pokemon move name and damage data.
-    moveSet: {
-      'Dragon Claw': 80,
-      'Blast Burn': 100
-    }
+    healthPoints: 510,
+    moveSet: 'Fire Blast'
   }
 }
-
 // selecting id containing start button
 const startButton = document.getElementById('startButton')
 //function that will prompt user to make game choice
@@ -45,58 +35,41 @@ const gameStart = function () {
 startButton.addEventListener('click', gameStart)
 
 // FUNCTION THAT TAKES CHOICE THAT USER PICKS AND DISPLAYS INFORMATION RELATED TO POKEMON CHOICE
-function pokeChoice(element, pokeName) {
+function pokeChoice(element, pokeName, move) {
   if (playersChoice.player1) {
     return //stops function after assigning player1 to pokemon
   }
-
   //FOR LOOP FOR POKEMON ARRAY LISTED EARLIER TO ASSIGN OPPOSITE POKEMON TO PLAYER 2
   for (let i = 0; i < pokemons.length; i++) {
     //select pokemons array global variable
     const pokemon = pokemons[i]
     //selecting pokemon name from pokemonObject
     const poke = pokemonObject[pokemon]
-
-    //if conditional to store player1/player2 value depending on
-    //what player 1 picks first. Will display Pokemon name and HP
-
+    //Assigning HP to poke value
+    let enemyPokeHP = poke.healthPoints
+    let playerPokeHP = poke.healthPoints
+    //Assigning Move to Poke value
+    let playerPokeMove = poke.moveSet
+    let enemyPokeMove = poke.moveSet
     //Selecting ID based upon what user Pokemon clicks first
     const pokemonID = document.getElementById(`${pokemon}ID`)
-    //Selecting section tags containing hitpoints
-    const hitPoints = document.getElementById('hitPoints')
-    //Selecting flamethrower ID containing move
-    const selectFlameP = document.getElementById('Flamethrower')
-    //Selecting fire fang ID containing move
-    const selectfireFang = document.getElementById('Fire Fang')
-    //Variable containing HP value based on user choice
-    let pokeHP = 500
-    let enemyHP = 500
-    ////////////////////////////////////
+    //if conditional to store player1/player2 value depending on
+    //what player 1 picks first. Will display Pokemon name and HP
     if (pokeName !== pokemon) {
       //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION. WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
       playersChoice.player2 = poke
-      pokemonID.innerText = `Player 2 chooses: ${pokemon}`
-      let describeHP = (hitPoints.innerText = `HP: ${enemyHP}`)
-
-      //SELECTING POKEMON MOVE NAME AND ADDING TEXT DESCRIBING ACTION
-      const flameThrower = function () {
-        selectFlameP.innerText = `You chose Flamethrower!`
-        describeHP = hitPoints.innerText = `HP: ${[pokeHP] - 80}`
-      }
-      selectFlameP.addEventListener('click', flameThrower)
-    }
-    //////////////////////////////
-    else {
+      pokemonID.innerText = `Player 2 chooses: ${pokemon} 
+        HP: ${enemyPokeHP}`
+    } else {
       //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION. WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
       playersChoice.player1 = poke
-      pokemonID.innerText = `Player 1 chooses: ${pokemon}`
-      let describeHP2 = (hitPoints.innerText = `HP: ${pokeHP}`)
-      //SELECTING POKEMON MOVE NAME AND ADDING TEXT DESCRIBING ACTION
-      const fireFang = function () {
-        selectfireFang.innerText = `You chose Fire Fang!`
-        describeHP2 = hitPoints.innerText = `HP: ${enemyHP - 80}`
-      }
-      selectfireFang.addEventListener('click', fireFang)
+      pokemonID.innerText = `Player 1 chooses: ${pokemon}
+        HP: ${playerPokeHP}`
+      turn = 1
+    }
+    while (turn === 1) {
+      console.log(playerPokeMove)
+      return
     }
   }
 }
