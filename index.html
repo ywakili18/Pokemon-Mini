@@ -8,21 +8,25 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- START BUTTON -->
   <div>
     <button id='startButton'>Start Game!</button>
     <p id= 'startP'></p>
-
   </div>
- 
+ <!-- DISPLAY TYPHLOSION NAME AND MOVESET -->
 <div id='typh' class='hiddenPoke' >
-  <p id='displayHP1'>Typhlosion</p>
+  <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
+  AND POKEMON NAME -->
+  <p id='TyphlosionID' onclick="pokeChoice(this, null, 'Typhlosion')">Typhlosion</p>
   <p>Flamethrower</p>
   <p>Eruption</p>
 </div>
 <br>
 <hr>
+<!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
+  AND POKEMON NAME -->
 <div id='char' class='hiddenPoke'>
-  <p id='displayHP2'>Charizard</p>
+  <p id='CharizardID' onclick="pokeChoice(this, null, 'Charizard')">Charizard</p>
   <p>Dragon Claw</p>
   <p>Blast Burn</p>
 </div>
