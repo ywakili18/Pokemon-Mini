@@ -1,5 +1,5 @@
 //GLOBAL VARIABLES
-let turn = null
+let gameActive = false
 const pokemons = ['Typhlosion', 'Charizard']
 //OBJECT STORING PLAYER CHOICE
 playersChoice = {
@@ -31,11 +31,10 @@ const gameStart = function () {
   const selectChar = document.getElementById('char')
   selectChar.classList.remove('hiddenPoke')
 }
-//event listener
 startButton.addEventListener('click', gameStart)
 
 // FUNCTION THAT TAKES CHOICE THAT USER PICKS AND DISPLAYS INFORMATION RELATED TO POKEMON CHOICE
-function pokeChoice(element, pokeName, move) {
+function pokeChoice(element, pokeName) {
   if (playersChoice.player1) {
     return //stops function after assigning player1 to pokemon
   }
@@ -45,31 +44,46 @@ function pokeChoice(element, pokeName, move) {
     const pokemon = pokemons[i]
     //selecting pokemon name from pokemonObject
     const poke = pokemonObject[pokemon]
+
     //Assigning HP to poke value
     let enemyPokeHP = poke.healthPoints
     let playerPokeHP = poke.healthPoints
-    //Assigning Move to Poke value
-    let playerPokeMove = poke.moveSet
-    let enemyPokeMove = poke.moveSet
+
+    const selectFlameP = document.getElementById('FlameThrower')
+    const selectfireBlastP = document.getElementById('fireBlast')
+
     //Selecting ID based upon what user Pokemon clicks first
     const pokemonID = document.getElementById(`${pokemon}ID`)
-    //if conditional to store player1/player2 value depending on
-    //what player 1 picks first. Will display Pokemon name and HP
+
     if (pokeName !== pokemon) {
-      //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION. WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
+      //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION.
+      //WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
       playersChoice.player2 = poke
       pokemonID.innerText = `Player 2 chooses: ${pokemon} 
         HP: ${enemyPokeHP}`
+      playersChoice.player2 = 2
+      console.log(`${playersChoice.player2} ${pokemon}`)
+      //SELECT FLAMETHROWER
+      // const flameThrower = function () {
+      //   selectFlameP.innerText = `P2 chooses Flamethrower`
+      //   describeHP = pokemonID.innerText = `${pokemon}
+      //   HP: ${playerPokeHP - 80}`
+      // }
+      // selectFlameP.addEventListener('click', flameThrower)
+
+      //SELECTING FIRE BLAST
+      // const fireBlast = function () {
+      //   selectfireBlastP.innerText = `P2 chooses Fire Blast!`
+      //   describeHP = pokemonID.innerText = `${pokemon}
+      //     HP: ${playerPokeHP - 80}`
+      // }
+      // selectfireBlastP.addEventListener('click', fireBlast)
     } else {
-      //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION. WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
       playersChoice.player1 = poke
       pokemonID.innerText = `Player 1 chooses: ${pokemon}
         HP: ${playerPokeHP}`
-      turn = 1
-    }
-    while (turn === 1) {
-      console.log(playerPokeMove)
-      return
+      playersChoice.player1 = 1
+      console.log(`${playersChoice.player1} ${pokemon}`)
     }
   }
 }
