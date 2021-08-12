@@ -1,5 +1,7 @@
 //GLOBAL VARIABLES
-let turn = false
+let playerTurn = null
+let playerOne = null
+let playerTwo = null
 const pokemons = ['Typhlosion', 'Charizard']
 //OBJECT STORING PLAYER CHOICE
 playersChoice = {
@@ -14,7 +16,7 @@ const pokemonObject = {
     moveSet: 'Flamethrower'
   },
   Charizard: {
-    healthPoints: 510,
+    healthPoints: 500,
     moveSet: 'Fire Blast'
   }
 }
@@ -24,7 +26,7 @@ const startButton = document.getElementById('startButton')
 const gameStart = function () {
   //selecting pTag containing pokemon
   let buttonP = document.getElementById('startP')
-  buttonP.innerText = 'Game Start! Player 1: Pick your pokemon below'
+  buttonP.innerText = 'Game Start! Player 1: Pick your pokemon below.'
   // event listener to show pokemon choices
   const selectTyph = document.getElementById('typh')
   selectTyph.classList.remove('hiddenPoke')
@@ -50,32 +52,52 @@ function pokeChoice(element, pokeName) {
     let playerPokeHP = poke.healthPoints
 
     //Selecting ID based upon what user Pokemon clicks first
-    const pokemonID = document.getElementById(`${pokemon}ID`)
+    const pokemonID = document.getElementById(`${pokemon}Message`)
 
     if (pokeName !== pokemon) {
       //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION.
       //WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
       playersChoice.player2 = poke
-      pokemonID.innerText = `Player 2 chooses: ${pokemon} 
-        HP: ${enemyPokeHP}`
+      pokemonID.innerHTML = `Player 2 chooses: ${pokemon}`
+      playerTwo = pokemon
     } else {
       playersChoice.player1 = poke
-      pokemonID.innerText = `Player 1 chooses: ${pokemon}
-        HP: ${playerPokeHP}`
+      pokemonID.innerHTML = `Player 1 chooses: ${pokemon}`
+      playerOne = pokemon
+      console.log(playerOne)
     }
   }
 }
-
+//battle sequence below
 const selectFlameP = document.getElementById('FlameThrower')
+selectFlameP.addEventListener('click', () => {
+  if (playerTurn === true && playerOne === 'Charizard') {
+    return
+  } else {
+    pokemonAttacks('Charizard')
+    playerTurn = false
+  }
+})
 const selectfireBlastP = document.getElementById('fireBlast')
-// SELECT FLAMETHROWER
-const flameThrower = function () {
-  selectFlameP.innerText = `P2 chooses Flamethrower`
-}
-selectFlameP.addEventListener('click', flameThrower)
+selectfireBlastP.addEventListener('click', () => {
+  if (playerTurn === true && playerOne === 'Typhlosion') {
+    return
+  } else {
+    pokemonAttacks('Typhlosion')
+    playerTurn = false
+  }
+})
 
-// SELECTING FIRE BLAST
-const fireBlast = function () {
-  selectfireBlastP.innerText = `P2 chooses Fire Blast!`
+function pokemonAttacks(victim, damage = 100) {
+  pokemonObject[victim].healthPoints -= damage
+  const hpTag = document.getElementById(`hp-${victim}`)
+  hpTag.innerText = `HP: ${pokemonObject[victim].healthPoints}`
+  checkLoser(victim)
 }
-selectfireBlastP.addEventListener('click', fireBlast)
+
+function checkLoser(victim) {
+  const gameOverTag = document.getElementById('gameOverMessage')
+  if (pokemonObject[victim].healthPoints <= 0) {
+    gameOverTag.innerText = `${victim} loses`
+  }
+}

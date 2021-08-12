@@ -1,53 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <title>Document</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
 
-<body>
-  <!-- music -->
-  <nav id='gameMusic'><audio controls autoplay>
-    <source src="https://bit.ly/3yEQKXm" type="audio/mpeg">
-    </audio><p>Optional Battle Music!</p>
-  </nav>
-  <br><hr>
-  <!-- sprites -->
-  <header><img id= 'typhPic'src="https://bit.ly/3jQAfRC" alt="">
-    <img id= 'charPic' src="https://bit.ly/3iENUfq" alt="">
-  </header>
-  <!-- START BUTTON -->
-  <div id ='centerDiv'>
-    <p>Welcome to Pokemon Mini!</p>
-    <button id='startButton'>Start Game!</button>
-    <p id= 'startP'></p>
-  </div>
-
-  <section>
-    <!-- DISPLAY TYPHLOSION NAME AND MOVESET -->
-    <div id='typh' class='hiddenPoke' >
-    <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
-    AND POKEMON NAME -->
-    <p id='TyphlosionID' onclick="pokeChoice(this,'Typhlosion')">
-    Typhlosion<br></p>
-    <p id='FlameThrower'>Flamethrower</p>
+  <body>
+    <!-- music -->
+    <nav id="gameMusic">
+      <audio controls autoplay>
+        <source src="https://bit.ly/3yEQKXm" type="audio/mpeg" />
+      </audio>
+      <p>Optional Battle Music!</p>
+    </nav>
+    <br />
+    <hr />
+    <!-- sprites -->
+    <header>
+      <img id="typhPic" src="https://bit.ly/3jQAfRC" alt="" />
+      <img id="charPic" src="https://bit.ly/3iENUfq" alt="" />
+    </header>
+    <!-- START BUTTON -->
+    <div id="centerDiv">
+      <p>Welcome to Pokemon Mini!</p>
+      <button id="startButton">Start Game!</button>
+      <p id="startP"></p>
     </div>
 
-    <!-- DISPLAY CHARIZARD NAME AND MOVESET -->
-    <div id='char' class='hiddenPoke'>
-    <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
+    <section>
+      <!-- DISPLAY TYPHLOSION NAME AND MOVESET -->
+      <div id="typh" class="hiddenPoke">
+        <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
     AND POKEMON NAME -->
-    <p id='CharizardID' onclick="pokeChoice(this, 'Charizard')">Charizard<br></p>
-    <p id='fireBlast' >Fire Blast</p>
-    </div>
-  </section>
+        <div id="TyphlosionID" onclick="pokeChoice(this,'Typhlosion')">
+          Typhlosion<br />
+          <p id="TyphlosionMessage"></p>
+          <p id="hp-Typhlosion">HP:500</p>
+          <p id="FlameThrower">Flamethrower</p>
+        </div>
+      </div>
 
-  <script src="index.js"></script>
-</body>
+      <!-- DISPLAY CHARIZARD NAME AND MOVESET -->
+      <div id="char" class="hiddenPoke">
+        <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
+    AND POKEMON NAME -->
+        <div id="CharizardID" onclick="pokeChoice(this, 'Charizard')">
+          Charizard<br />
+          <p id="CharizardMessage"></p>
+          <p id="hp-Charizard">HP:500</p>
+          <p id="fireBlast">Fire Blast</p>
+        </div>
+      </div>
+
+      <p id="gameOverMessage"></p>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
 </html>
