@@ -2,10 +2,12 @@ body {
   background-color: #ffba08;
   color: #d00000;
   font-family: 'Press Start 2P', cursive;
+  margin: 0 auto;
 }
 img {
-  width: 250px;
+  width: auto;
   margin: auto 0;
+  height: auto;
 }
 button {
   display: inline;
@@ -13,14 +15,40 @@ button {
   background-color: #f48c06;
   color: #d00000;
   padding: 20px;
-  width: auto;
-  font-size: xx-large;
+  width: 400px;
+  font-size: large;
   font-family: 'Press Start 2P', cursive;
+  border-color: #d00000;
+  /* margin-top: 45px; */
 }
 /* to hide clickable div only when user starts game */
 .hiddenPoke {
   display: none;
 }
 #centerDiv {
+  text-align: center;
+}
+#charPic {
+  float: right;
+  height: 200px;
+  width: 200px;
+}
+#typhPic {
+  float: left;
+  height: 200px;
+}
+#char {
+  float: right;
+  margin-top: 50px;
+}
+#typh {
+  float: left;
+  margin-top: 50px;
+}
+#startP {
+  text-align: center;
+}
+#gameMusic {
+  opacity: 20%;
   text-align: center;
 }

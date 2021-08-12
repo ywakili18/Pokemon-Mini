@@ -12,32 +12,41 @@
 </head>
 
 <body>
-  <nav><img src="https://i.ytimg.com/vi/CyXnN7NuqQo/maxresdefault.jpg" alt=""></nav>
+  <!-- music -->
+  <nav id='gameMusic'><audio controls autoplay>
+    <source src="https://bit.ly/3yEQKXm" type="audio/mpeg">
+    </audio><p>Optional Battle Music!</p>
+  </nav>
+  <br><hr>
+  <!-- sprites -->
+  <header><img id= 'typhPic'src="https://bit.ly/3jQAfRC" alt="">
+    <img id= 'charPic' src="https://bit.ly/3iENUfq" alt="">
+  </header>
   <!-- START BUTTON -->
   <div id ='centerDiv'>
+    <p>Welcome to Pokemon Mini!</p>
     <button id='startButton'>Start Game!</button>
     <p id= 'startP'></p>
   </div>
-  
- <!-- DISPLAY TYPHLOSION NAME AND MOVESET -->
-<div id='typh' class='hiddenPoke' >
-  <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
-  AND POKEMON NAME -->
-  <p id='TyphlosionID' onclick="pokeChoice(this,'Typhlosion')">
+
+  <section>
+    <!-- DISPLAY TYPHLOSION NAME AND MOVESET -->
+    <div id='typh' class='hiddenPoke' >
+    <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
+    AND POKEMON NAME -->
+    <p id='TyphlosionID' onclick="pokeChoice(this,'Typhlosion')">
     Typhlosion<br></p>
-  <p id='FlameThrower'>Flamethrower</p>
-</div>
+    <p id='FlameThrower'>Flamethrower</p>
+    </div>
 
-<br>
-<hr>
-<!-- DISPLAY CHARIZARD NAME AND MOVESET -->
-<div id='char' class='hiddenPoke'>
-  <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
-  AND POKEMON NAME -->
-  <p id='CharizardID' onclick="pokeChoice(this, 'Charizard')">Charizard<br></p>
+    <!-- DISPLAY CHARIZARD NAME AND MOVESET -->
+    <div id='char' class='hiddenPoke'>
+    <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
+    AND POKEMON NAME -->
+    <p id='CharizardID' onclick="pokeChoice(this, 'Charizard')">Charizard<br></p>
     <p id='fireBlast' >Fire Blast</p>
-</div>
-
+    </div>
+  </section>
 
   <script src="index.js"></script>
 </body>

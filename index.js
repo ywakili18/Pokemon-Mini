@@ -1,5 +1,5 @@
 //GLOBAL VARIABLES
-let gameActive = false
+let turn = false
 const pokemons = ['Typhlosion', 'Charizard']
 //OBJECT STORING PLAYER CHOICE
 playersChoice = {
@@ -49,9 +49,6 @@ function pokeChoice(element, pokeName) {
     let enemyPokeHP = poke.healthPoints
     let playerPokeHP = poke.healthPoints
 
-    const selectFlameP = document.getElementById('FlameThrower')
-    const selectfireBlastP = document.getElementById('fireBlast')
-
     //Selecting ID based upon what user Pokemon clicks first
     const pokemonID = document.getElementById(`${pokemon}ID`)
 
@@ -61,29 +58,24 @@ function pokeChoice(element, pokeName) {
       playersChoice.player2 = poke
       pokemonID.innerText = `Player 2 chooses: ${pokemon} 
         HP: ${enemyPokeHP}`
-      playersChoice.player2 = 2
-      console.log(`${playersChoice.player2} ${pokemon}`)
-      //SELECT FLAMETHROWER
-      // const flameThrower = function () {
-      //   selectFlameP.innerText = `P2 chooses Flamethrower`
-      //   describeHP = pokemonID.innerText = `${pokemon}
-      //   HP: ${playerPokeHP - 80}`
-      // }
-      // selectFlameP.addEventListener('click', flameThrower)
-
-      //SELECTING FIRE BLAST
-      // const fireBlast = function () {
-      //   selectfireBlastP.innerText = `P2 chooses Fire Blast!`
-      //   describeHP = pokemonID.innerText = `${pokemon}
-      //     HP: ${playerPokeHP - 80}`
-      // }
-      // selectfireBlastP.addEventListener('click', fireBlast)
     } else {
       playersChoice.player1 = poke
       pokemonID.innerText = `Player 1 chooses: ${pokemon}
         HP: ${playerPokeHP}`
-      playersChoice.player1 = 1
-      console.log(`${playersChoice.player1} ${pokemon}`)
     }
   }
 }
+
+const selectFlameP = document.getElementById('FlameThrower')
+const selectfireBlastP = document.getElementById('fireBlast')
+// SELECT FLAMETHROWER
+const flameThrower = function () {
+  selectFlameP.innerText = `P2 chooses Flamethrower`
+}
+selectFlameP.addEventListener('click', flameThrower)
+
+// SELECTING FIRE BLAST
+const fireBlast = function () {
+  selectfireBlastP.innerText = `P2 chooses Fire Blast!`
+}
+selectfireBlastP.addEventListener('click', fireBlast)

@@ -20,13 +20,13 @@ My first project using HTML, CSS, and Javascript fundamentals. Creating a Pokemo
 
 - [x] Creating new Repo in GitHub
 - [x] Include Markdown
-- [ ] Utlize flexbox or grid
+- [x] Utlize flexbox or grid
 - [ ] Two HTML pages to navigate through
 - [ ] Include two event handlers
 - [ ] 20 git commits
-- [ ] Properly formatted to look readable
-- [ ] Display use of Global variables, function parameters, and scope.
-- [ ] Using camelCase for variables
+- [x] Properly formatted to look readable
+- [x] Display use of Global variables, function parameters, and scope.
+- [x] Using camelCase for variables
 - [ ] Deploy on surge
 
 ---
@@ -72,3 +72,5 @@ What my goal is during this first attempt is to get game logic to work and refra
 [Font Used : "Press Start 2P" by CodeMan38](https://fonts.google.com/specimen/Press+Start+2P)
 
 [Class list](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+
+[Music Credit](https://downloads.khinsider.com/game-soundtracks/album/pokemon-gold-silver)
