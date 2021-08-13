@@ -6,7 +6,7 @@
 
 ##### [GitHub](https://github.com/ywakili18)
 
-##### [Project Link][deployed using surge] (http://yousofwpokemongoldmini.surge.sh/)
+##### [Project Link][Deployed using surge] (http://yousofwpokemongoldmini.surge.sh/)
 
 **_Description_**
 
