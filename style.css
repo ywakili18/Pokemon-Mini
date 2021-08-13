@@ -1,21 +1,22 @@
+/* page 1 */
 body {
-  background-color: #ffba08;
-  color: #d00000;
+  background-color: #e85d04;
+  color: #f8e004;
   font-family: 'Press Start 2P', cursive;
   margin: 0 auto;
 }
-#page2body {
-  background-color: #9d0208;
-  color: #ffba08;
-  margin: 0 auto;
-  font-family: 'Press Start 2P', cursive;
-  font-size: medium;
+/* targeting main body page for background image */
+#mainBody {
+  background-image: url('https://wallpaperaccess.com/full/556526.jpg');
+  background-repeat: none;
+  object-fit: contain;
 }
 img {
   width: auto;
   margin: auto 0;
   height: auto;
 }
+/* styling game start button */
 button {
   display: inline;
   border-style: groove;
@@ -31,6 +32,17 @@ button {
 /* to hide clickable div only when user starts game */
 .hiddenPoke {
   display: none;
+}
+/* styling pokemon divs */
+#CharizardID,
+#TyphlosionID {
+  border: solid 1em #e85d04;
+  text-align: center;
+}
+/* styling moves */
+#FlameThrower,
+#fireBlast {
+  background-color: #9d0208;
 }
 #centerDiv {
   text-align: center;
@@ -69,6 +81,7 @@ a {
   display: grid;
   text-align: center;
 }
+/* page two */
 .page2body {
   display: flex;
   flex-direction: column;
@@ -77,10 +90,11 @@ a {
   text-align: center;
   align-content: space-between;
   font-size: large;
+  background-color: #370617;
+  color: #f48c06;
 }
 /* div in article tags */
 .page2Ptags {
-  border: 1px solid #2d2d2d;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -89,15 +103,16 @@ a {
 }
 /* header page2 */
 .header2Class {
-  border: solid 1px black;
   opacity: 50%;
 }
 /* footer page2 */
 .footer2 {
   margin-top: auto;
-  border: 1px solid black;
+  margin-bottom: 85px;
+  font-size: 40px;
 }
+/* containing 3 sprites middle of page */
 .imgDiv {
   height: 400px;
-  width: 450px;
+  width: 350px;
 }

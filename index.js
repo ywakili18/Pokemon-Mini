@@ -2,6 +2,7 @@
 let playerTurn = null
 let playerOne = null
 let playerTwo = null
+//array to select two names in pokeChoice function
 const pokemons = ['Typhlosion', 'Charizard']
 //OBJECT STORING PLAYER CHOICE
 playersChoice = {
@@ -85,14 +86,16 @@ selectfireBlastP.addEventListener('click', () => {
     playerTurn = 'Typhlosion'
   }
 })
-
+// function that takes parameter from event listeners above
+// has victim: pokemon being attacked, and HP being deducted by random value.
+//check loser function gets called here
 function pokemonAttacks(victim, damage = Math.floor(Math.random() * 100) + 50) {
   pokemonObjects[victim].healthPoints -= damage
   const hpTag = document.getElementById(`hp-${victim}`)
   hpTag.innerText = `HP: ${pokemonObjects[victim].healthPoints}`
   checkLoser(victim)
 }
-
+// check loser functio/
 function checkLoser(victim) {
   const gameOverTag = document.getElementById('gameOverMessage')
   if (pokemonObjects[victim].healthPoints <= 0) {
