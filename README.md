@@ -59,12 +59,14 @@ What my goal is during this first attempt is to get game logic to work and refra
 
 #### [Trello Board](https://trello.com/b/7Ojd8AR1/pokemon-mini)
 
-**_Post MVP_**
+**_Future Plans_**
 
 - [ ] Add more pokemon to choose from
 - [ ] Include more then one move(include status moves)
 - [ ] Use APIs
 - [ ] Refractor code to have better DRY principles; better game logic
+- [ ] Customized Music Player
+- [ ] Smoother transitions
 
 **_Credits_**
 
