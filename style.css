@@ -5,10 +5,11 @@ body {
   margin: 0 auto;
 }
 #page2body {
-  background-color: #370617;
+  background-color: #9d0208;
   color: #ffba08;
-  font-family: 'Press Start 2P', cursive;
   margin: 0 auto;
+  font-family: 'Press Start 2P', cursive;
+  font-size: medium;
 }
 img {
   width: auto;
@@ -22,7 +23,7 @@ button {
   color: #d00000;
   padding: 20px;
   width: 400px;
-  font-size: large;
+  font-size: medium;
   font-family: 'Press Start 2P', cursive;
   border-color: #d00000;
   /* margin-top: 45px; */
@@ -60,29 +61,43 @@ button {
 }
 a {
   text-align: center;
-  font-size: smaller;
+  font-size: large;
   display: grid;
-  margin-top: 50px;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 #gameOverMessage {
   display: grid;
   text-align: center;
 }
-
-#gameMusic2 {
-  margin-top: 250px;
+.page2body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
   text-align: center;
-  font-size: smaller;
+  align-content: space-between;
+  font-size: large;
 }
-#audioButton2 {
-  display: grid;
-  width: 300px;
-  height: 100px;
-  padding: 20px;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  margin: -70px 0 0 -170px;
+/* div in article tags */
+.page2Ptags {
+  border: 1px solid #2d2d2d;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 0.75em;
+  padding: 50px;
+}
+/* header page2 */
+.header2Class {
+  border: solid 1px black;
+  opacity: 50%;
+}
+/* footer page2 */
+.footer2 {
+  margin-top: auto;
+  border: 1px solid black;
+}
+.imgDiv {
+  height: 400px;
+  width: 450px;
 }

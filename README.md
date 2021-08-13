@@ -1,6 +1,6 @@
 # Pokemon Gold Mini
 
-## Date 08/08/2021
+## Date 08/12/2021
 
 ### By: Yousof Wakili
 
@@ -21,9 +21,9 @@ My first project using HTML, CSS, and Javascript fundamentals. Creating a Pokemo
 - [x] Creating new Repo in GitHub
 - [x] Include Markdown
 - [x] Utlize flexbox or grid
-- [ ] Two HTML pages to navigate through
-- [ ] Include two event handlers
-- [ ] 20 git commits
+- [x] Two HTML pages to navigate through
+- [x] Include two event handlers
+- [x] 20 git commits
 - [x] Properly formatted to look readable
 - [x] Display use of Global variables, function parameters, and scope.
 - [x] Using camelCase for variables
@@ -64,6 +64,7 @@ What my goal is during this first attempt is to get game logic to work and refra
 - [ ] Add more pokemon to choose from
 - [ ] Include more then one move(include status moves)
 - [ ] Use APIs
+- [ ] Refractor code to have DRY principles; better game logic
 
 **_Credits_**
 
