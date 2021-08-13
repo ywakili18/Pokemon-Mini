@@ -1,4 +1,4 @@
-# Pokemon-Mini
+# Pokemon Gold Mini
 
 ## Date 08/08/2021
 
@@ -76,3 +76,5 @@ What my goal is during this first attempt is to get game logic to work and refra
 [Music Credit](https://downloads.khinsider.com/game-soundtracks/album/pokemon-gold-silver)
 
 [To stop event Listener from Working](https://stackoverflow.com/questions/1755815/disable-all-click-events-on-page-javascript/48035251)
+
+[Quick solution to center Elements in CSS](https://css-tricks.com/centering-css-complete-guide/)

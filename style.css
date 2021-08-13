@@ -4,6 +4,12 @@ body {
   font-family: 'Press Start 2P', cursive;
   margin: 0 auto;
 }
+#page2body {
+  background-color: #370617;
+  color: #ffba08;
+  font-family: 'Press Start 2P', cursive;
+  margin: 0 auto;
+}
 img {
   width: auto;
   margin: auto 0;
@@ -49,6 +55,34 @@ button {
   text-align: center;
 }
 #gameMusic {
-  opacity: 20%;
+  opacity: 70%;
   text-align: center;
+}
+a {
+  text-align: center;
+  font-size: smaller;
+  display: grid;
+  margin-top: 50px;
+}
+#gameOverMessage {
+  display: grid;
+  text-align: center;
+}
+
+#gameMusic2 {
+  margin-top: 250px;
+  text-align: center;
+  font-size: smaller;
+}
+#audioButton2 {
+  display: grid;
+  width: 300px;
+  height: 100px;
+  padding: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: -70px 0 0 -170px;
 }

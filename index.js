@@ -96,13 +96,13 @@ function pokemonAttacks(victim, damage = Math.floor(Math.random() * 100) + 50) {
 function checkLoser(victim) {
   const gameOverTag = document.getElementById('gameOverMessage')
   if (pokemonObjects[victim].healthPoints <= 0) {
-    gameOverTag.innerText = `${victim} loses`
-    //will stop event listener once solution is found
+    gameOverTag.innerText = `${victim} is out of HP! GameOver!`
+    //will stop game once winner has been decided
     document.addEventListener('click', handler, true)
 
     function handler(e) {
       e.stopPropagation()
-      e.preventDefault()
+      // e.preventDefault()
     }
   }
 }
