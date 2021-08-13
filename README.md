@@ -6,13 +6,13 @@
 
 ##### [GitHub](https://github.com/ywakili18)
 
-##### [Project Link](https://github.com/ywakili18/Pokemon-Mini)
+##### [Project Link][deployed using surge] (http://yousofwpokemongoldmini.surge.sh/)
 
 **_Description_**
 
 ---
 
-My first project using HTML, CSS, and Javascript fundamentals. Creating a Pokemon-style game with two specific pokemon being used. Each pokemon will have two moves that will produce damage to the other Pokemon's HP value (hit points/health points)
+My first project using HTML, CSS, and Javascript fundamentals. Creating a Pokemon-style game with two specific pokemon being used. Each pokemon will one that will produce damage at random value to the other Pokemon's HP value (hit points/health points)
 
 ---
 
@@ -36,7 +36,7 @@ My first project using HTML, CSS, and Javascript fundamentals. Creating a Pokemo
 To create a game like this will require the following:
 
 1. Creating two pokemon
-2. Both Pokemon having two unique moves (having damage points associated)
+2. Both Pokemon having unique moves (having damage points associated)
 3. Pokemon having unique attributes (Name, image of pokemon, Hit Points/ Health Points, type(i.e fire/water/electric etc))
 4. Adding game start/restart button, Choosing between which pokemon & what move user wants to pick.
 5. Checking for winner
@@ -75,5 +75,3 @@ What my goal is during this first attempt is to get game logic to work and refra
 [Class list](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
 
 [Music Credit](https://downloads.khinsider.com/game-soundtracks/album/pokemon-gold-silver)
-
-[To stop event Listener from Working](https://stackoverflow.com/questions/1755815/disable-all-click-events-on-page-javascript/48035251)

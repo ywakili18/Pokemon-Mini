@@ -17,8 +17,13 @@
   <body id="mainBody">
     <!-- music -->
     <nav id="gameMusic">
+      <img
+        id="pokeOakPic"
+        src="https://pa1.narvii.com/5932/f477bade98d1a53bc70aafec23964614468f6b84_hq.gif"
+        alt=""
+      />
       <p>Optional Battle Music!</p>
-      <audio controls autoplay>
+      <audio controls>
         <source src="https://bit.ly/3yEQKXm" type="audio/mpeg" />
       </audio>
     </nav>
@@ -32,6 +37,7 @@
     <!-- START BUTTON -->
     <div id="centerDiv">
       <p>Welcome to Pokemon Gold Mini!</p>
+      <p>By: Yousof Wakili</p>
       <button id="startButton">Start Game!</button>
       <button onClick="window.location.reload();" class="button">
         Restart game
@@ -54,8 +60,7 @@
 
       <!-- DISPLAY CHARIZARD NAME AND MOVESET -->
       <div id="char" class="hiddenPoke">
-        <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
-    AND POKEMON NAME -->
+        <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE AND POKEMON NAME -->
         <div id="CharizardID" onclick="pokeChoice(this, 'Charizard')">
           Charizard<br />
           <p id="CharizardMessage"></p>
@@ -63,7 +68,6 @@
           <p id="fireBlast">Fire Blast</p>
         </div>
       </div>
-
       <p id="gameOverMessage"></p>
     </section>
     <!-- Link to second Page -->

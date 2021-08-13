@@ -8,8 +8,8 @@ body {
 /* targeting main body page for background image */
 #mainBody {
   background-image: url('https://wallpaperaccess.com/full/556526.jpg');
-  background-repeat: none;
-  object-fit: contain;
+  max-width: 100%;
+  height: auto;
 }
 img {
   width: auto;
@@ -115,4 +115,8 @@ a {
 .imgDiv {
   height: 400px;
   width: 350px;
+}
+#pokeOakPic {
+  height: 150px;
+  width: 300px;
 }

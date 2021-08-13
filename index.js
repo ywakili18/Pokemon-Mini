@@ -3,6 +3,7 @@ let playerTurn = null
 let playerOne = null
 let playerTwo = null
 //array to select two names in pokeChoice function
+
 const pokemons = ['Typhlosion', 'Charizard']
 //OBJECT STORING PLAYER CHOICE
 playersChoice = {
@@ -21,6 +22,7 @@ const pokemonObjects = {
     moveSet: 'Fire Blast'
   }
 }
+//-- GAME LOGIC
 // selecting id containing start button
 const startButton = document.getElementById('startButton')
 //function that will prompt user to make game choice
@@ -59,18 +61,19 @@ function pokeChoice(element, chosenPoke) {
       //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION.
       //WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
       playersChoice.player2 = pokemon
-      pokemonID.innerHTML = `Player 2 chooses: ${pokemonName}`
+      pokemonID.innerHTML = `Player 2: ${pokemonName}`
       playerTwo = pokemonName
     } else {
       playersChoice.player1 = pokemon
-      pokemonID.innerHTML = `Player 1 chooses: ${pokemonName}`
+      pokemonID.innerHTML = `Player 1: ${pokemonName}`
       playerOne = pokemonName
     }
   }
   playerTurn = playerOne
 }
-//battle sequence below
-//Typhlosion flamethrower event listener
+//BATTLE SEQUENCE
+
+//Typhlosion Flamethrower event listener
 const selectFlameP = document.getElementById('FlameThrower')
 selectFlameP.addEventListener('click', () => {
   if (playerTurn === 'Typhlosion') {
@@ -78,7 +81,7 @@ selectFlameP.addEventListener('click', () => {
     playerTurn = 'Charizard'
   }
 })
-//charizard flamethrower event listener
+//charizard Fire Blast event listener
 const selectfireBlastP = document.getElementById('fireBlast')
 selectfireBlastP.addEventListener('click', () => {
   if (playerTurn === 'Charizard') {
@@ -95,17 +98,12 @@ function pokemonAttacks(victim, damage = Math.floor(Math.random() * 100) + 50) {
   hpTag.innerText = `HP: ${pokemonObjects[victim].healthPoints}`
   checkLoser(victim)
 }
-// check loser functio/
+// check loser function/
 function checkLoser(victim) {
   const gameOverTag = document.getElementById('gameOverMessage')
   if (pokemonObjects[victim].healthPoints <= 0) {
     gameOverTag.innerText = `${victim} is out of HP! GameOver!`
     //will stop game once winner has been decided
     document.addEventListener('click', handler, true)
-
-    function handler(e) {
-      e.stopPropagation()
-      // e.preventDefault()
-    }
   }
 }
