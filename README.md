@@ -1,6 +1,6 @@
 # Pokemon Gold Mini
 
-## Date 08/12/2021
+## Date 08/13/2021
 
 ### By: Yousof Wakili
 
