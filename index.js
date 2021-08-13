@@ -10,7 +10,7 @@ playersChoice = {
 }
 //-- POKEMON DATA
 //--TYPHLOSION and CHARIZARD OBJECT DATA
-const pokemonObject = {
+const pokemonObjects = {
   Typhlosion: {
     healthPoints: 500,
     moveSet: 'Flamethrower'
@@ -36,68 +36,73 @@ const gameStart = function () {
 startButton.addEventListener('click', gameStart)
 
 // FUNCTION THAT TAKES CHOICE THAT USER PICKS AND DISPLAYS INFORMATION RELATED TO POKEMON CHOICE
-function pokeChoice(element, pokeName) {
+function pokeChoice(element, chosenPoke) {
   if (playersChoice.player1) {
     return //stops function after assigning player1 to pokemon
   }
   //FOR LOOP FOR POKEMON ARRAY LISTED EARLIER TO ASSIGN OPPOSITE POKEMON TO PLAYER 2
   for (let i = 0; i < pokemons.length; i++) {
     //select pokemons array global variable
-    const pokemon = pokemons[i]
-    //selecting pokemon name from pokemonObject
-    const poke = pokemonObject[pokemon]
+    const pokemonName = pokemons[i]
+    //selecting pokemon name from pokemonObjects
+    const pokemon = pokemonObjects[pokemonName]
 
     //Assigning HP to poke value
-    let enemyPokeHP = poke.healthPoints
-    let playerPokeHP = poke.healthPoints
+    let enemyPokeHP = pokemon.healthPoints
+    let playerPokeHP = pokemon.healthPoints
 
     //Selecting ID based upon what user Pokemon clicks first
-    const pokemonID = document.getElementById(`${pokemon}Message`)
+    const pokemonID = document.getElementById(`${pokemonName}Message`)
 
-    if (pokeName !== pokemon) {
+    if (chosenPoke !== pokemonName) {
       //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION.
       //WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
-      playersChoice.player2 = poke
-      pokemonID.innerHTML = `Player 2 chooses: ${pokemon}`
-      playerTwo = pokemon
+      playersChoice.player2 = pokemon
+      pokemonID.innerHTML = `Player 2 chooses: ${pokemonName}`
+      playerTwo = pokemonName
     } else {
-      playersChoice.player1 = poke
-      pokemonID.innerHTML = `Player 1 chooses: ${pokemon}`
-      playerOne = pokemon
-      console.log(playerOne)
+      playersChoice.player1 = pokemon
+      pokemonID.innerHTML = `Player 1 chooses: ${pokemonName}`
+      playerOne = pokemonName
     }
   }
+  playerTurn = playerOne
 }
 //battle sequence below
+//Typhlosion flamethrower event listener
 const selectFlameP = document.getElementById('FlameThrower')
 selectFlameP.addEventListener('click', () => {
-  if (playerTurn === true && playerOne === 'Charizard') {
-    return
-  } else {
+  if (playerTurn === 'Typhlosion') {
     pokemonAttacks('Charizard')
-    playerTurn = false
+    playerTurn = 'Charizard'
   }
 })
+//charizard flamethrower event listener
 const selectfireBlastP = document.getElementById('fireBlast')
 selectfireBlastP.addEventListener('click', () => {
-  if (playerTurn === true && playerOne === 'Typhlosion') {
-    return
-  } else {
+  if (playerTurn === 'Charizard') {
     pokemonAttacks('Typhlosion')
-    playerTurn = false
+    playerTurn = 'Typhlosion'
   }
 })
 
-function pokemonAttacks(victim, damage = 100) {
-  pokemonObject[victim].healthPoints -= damage
+function pokemonAttacks(victim, damage = Math.floor(Math.random() * 100) + 50) {
+  pokemonObjects[victim].healthPoints -= damage
   const hpTag = document.getElementById(`hp-${victim}`)
-  hpTag.innerText = `HP: ${pokemonObject[victim].healthPoints}`
+  hpTag.innerText = `HP: ${pokemonObjects[victim].healthPoints}`
   checkLoser(victim)
 }
 
 function checkLoser(victim) {
   const gameOverTag = document.getElementById('gameOverMessage')
-  if (pokemonObject[victim].healthPoints <= 0) {
+  if (pokemonObjects[victim].healthPoints <= 0) {
     gameOverTag.innerText = `${victim} loses`
+    //will stop event listener once solution is found
+    document.addEventListener('click', handler, true)
+
+    function handler(e) {
+      e.stopPropagation()
+      e.preventDefault()
+    }
   }
 }

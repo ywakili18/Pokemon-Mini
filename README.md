@@ -74,3 +74,5 @@ What my goal is during this first attempt is to get game logic to work and refra
 [Class list](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
 
 [Music Credit](https://downloads.khinsider.com/game-soundtracks/album/pokemon-gold-silver)
+
+[To stop event Listener from Working](https://stackoverflow.com/questions/1755815/disable-all-click-events-on-page-javascript/48035251)
