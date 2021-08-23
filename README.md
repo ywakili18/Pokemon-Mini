@@ -1,8 +1,6 @@
 # Pokemon Gold Mini
 
-## Date 08/13/2021
-
-### By: Yousof Wakili
+## By: Yousof Wakili
 
 ##### [GitHub](https://github.com/ywakili18)
 
@@ -13,6 +11,11 @@
 ---
 
 My first project using HTML, CSS, and Javascript fundamentals. Creating a Pokemon-style game with two specific pokemon being used. Each pokemon will one that will produce damage at random value to the other Pokemon's HP value (hit points/health points)
+
+---
+
+![Page 1](https://i.ibb.co/K6Qr2TM/Page-1-screenshot.png)
+![Page 2](https://i.ibb.co/191dHbv/Page-2-screenshot.png)
 
 ---
 
@@ -27,7 +30,7 @@ My first project using HTML, CSS, and Javascript fundamentals. Creating a Pokemo
 - [x] Properly formatted to look readable
 - [x] Display use of Global variables, function parameters, and scope.
 - [x] Using camelCase for variables
-- [ ] Deploy on surge
+- [x] Deploy on surge
 
 ---
 
