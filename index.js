@@ -14,7 +14,16 @@ const names = [Cyndaquil.name, Totodile.name, Chikorita.name]
 const randomSelect = Math.floor(Math.random() * names.length)
 
 let selectPoke = Array.from(document.getElementsByClassName('btn'))
-
+let removeContainer = Array.from(document.getElementsByClassName('container'))
+// remove poke selection after game choice
+const removePoke = () => {
+  selectPoke.map((poke) => {
+    poke.remove()
+  })
+  removeContainer.map((item) => {
+    item.remove()
+  })
+}
 const pokeSelect = () => {
   selectPoke.map((pokeButton) => {
     pokeButton.addEventListener(
@@ -31,11 +40,13 @@ const pokeSelect = () => {
             player1 = e.target.value
             computer = names[randomSelect]
             console.log(player1, computer)
+            removePoke()
             break
           case 'Chikorita':
             player1 = e.target.value
             computer = names[randomSelect]
             console.log(player1, computer)
+            removePoke()
             break
           default:
             break
@@ -46,9 +57,3 @@ const pokeSelect = () => {
   })
 }
 pokeSelect()
-// remove poke selection after game choice
-const removePoke = () => {
-  selectPoke.map((poke) => {
-    poke.remove()
-  })
-}
