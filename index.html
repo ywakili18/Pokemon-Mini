@@ -5,74 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <title>Pokemon Gold Mini By: Yousof Wakili</title>
+   
+    <title>Pokemon Gold Mini</title>
   </head>
-
-  <body id="mainBody">
-    <!-- music -->
-    <nav id="gameMusic">
-      <img
-        id="pokeOakPic"
-        src="https://pa1.narvii.com/5932/f477bade98d1a53bc70aafec23964614468f6b84_hq.gif"
-        alt=""
-      />
-      <p>Optional Battle Music!</p>
-      <audio controls>
-        <source src="https://bit.ly/3yEQKXm" type="audio/mpeg" />
-      </audio>
-    </nav>
-    <br />
-    <hr />
-    <!-- sprites -->
+  <body>
     <header>
-      <img id="typhPic" src="https://bit.ly/3jQAfRC" alt="" />
-      <img id="charPic" src="https://bit.ly/3iENUfq" alt="" />
+      <h1>Pokemon Gold Mini:</h1>
     </header>
-    <!-- START BUTTON -->
-    <div id="centerDiv">
-      <p>Welcome to Pokemon Gold Mini!</p>
-      <p>By: Yousof Wakili</p>
-      <button id="startButton">Start Game!</button>
-      <button onClick="window.location.reload();" class="button">
-        Restart game
-      </button>
-      <p id="startP"></p>
-    </div>
-
-    <section>
-      <!-- DISPLAY TYPHLOSION NAME AND MOVESET -->
-      <div id="typh" class="hiddenPoke">
-        <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE
-    AND POKEMON NAME -->
-        <div id="TyphlosionID" onclick="pokeChoice(this,'Typhlosion')">
-          Typhlosion<br />
-          <p id="TyphlosionMessage"></p>
-          <p id="hp-Typhlosion">HP:500</p>
-          <p id="FlameThrower">Flamethrower</p>
+    <main>
+      <!-- Select Pokemon -->
+      <div class="container">
+        <h2>Choose your Pokemon</h2>
+        <!-- Cyndaquil -->
+        <div id="cyndaquil">
+          <h3>Cyndaquil</h3>
+          <p id="cyndHP">HP: 500</p>
+          <p>Move: Flamethrower</p>
+          <p>Type: Fire</p>
+          <p></p>
         </div>
-      </div>
-
-      <!-- DISPLAY CHARIZARD NAME AND MOVESET -->
-      <div id="char" class="hiddenPoke">
-        <!-- ONCLICK FUNCTION WITH THREE PARAMETERS: THIS TO SELECT P TAG, MOVE AND POKEMON NAME -->
-        <div id="CharizardID" onclick="pokeChoice(this, 'Charizard')">
-          Charizard<br />
-          <p id="CharizardMessage"></p>
-          <p id="hp-Charizard">HP:500</p>
-          <p id="fireBlast">Fire Blast</p>
+        <!-- Totodile -->
+        <div id="totodile">
+          <h3>Totodile</h3>
+          <p id="totoHP">HP: 500</p>
+          <p>Move: Water Gun</p>
+          <p>Type: Water</p>
+          <p></p>
         </div>
-      </div>
-      <p id="gameOverMessage"></p>
-    </section>
-    <!-- Link to second Page -->
-    <a href="index2.html">Click here to read how the game works!</a>
-
-    <script src="index.js"></script>
-  </body>
+        <!-- Chikorita -->
+        <div id="Chikorita">
+          <h3>Chikorita</h3>
+          <p id="chikHP">HP: 500</p>
+          <p>Move: Razor Leaf</p>
+          <p>Type: Grass</p>
+          <p></p>
+        </div>
+    
+        <!-- Button Selection -->
+        <div>
+          <button class="btn" value="Cyndaquil">Cyndaquil</button>
+          <button class="btn" value="Totodile">Totodile</button>
+          <button class="btn" value="Chikorita">Chikorita</button>
+        </div>
+    </main>
+  </body> <script src="index.js"></script>
 </html>

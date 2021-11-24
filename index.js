@@ -1,109 +1,54 @@
-//GLOBAL VARIABLES
-let playerTurn = null
-let playerOne = null
-let playerTwo = null
-//array to select two names in pokeChoice function
+let player1 = ''
+let computer = ''
 
-const pokemons = ['Typhlosion', 'Charizard']
-//OBJECT STORING PLAYER CHOICE
-playersChoice = {
-  player1: null,
-  player2: null
-}
-//-- POKEMON DATA
-//--TYPHLOSION and CHARIZARD OBJECT DATA
-const pokemonObjects = {
-  Typhlosion: {
-    healthPoints: 500,
-    moveSet: 'Flamethrower'
-  },
-  Charizard: {
-    healthPoints: 500,
-    moveSet: 'Fire Blast'
+class Pokemon {
+  constructor(name, hp, type, move) {
+    ;(this.name = name), (this.hp = hp), (this.type = type), (this.move = move)
   }
 }
-//-- GAME LOGIC
-// selecting id containing start button
-const startButton = document.getElementById('startButton')
-//function that will prompt user to make game choice
-const gameStart = function () {
-  //selecting pTag containing pokemon
-  let buttonP = document.getElementById('startP')
-  buttonP.innerText = 'Game Start! Player 1: Pick your pokemon below.'
-  // event listener to show pokemon choices
-  const selectTyph = document.getElementById('typh')
-  selectTyph.classList.remove('hiddenPoke')
-  const selectChar = document.getElementById('char')
-  selectChar.classList.remove('hiddenPoke')
+const Cyndaquil = new Pokemon('Cyndaquil', 100, 'Fire', 'Ember')
+const Totodile = new Pokemon('Totodile', 100, 'Water', 'Water Gun')
+const Chikorita = new Pokemon('Chikorita', 100, 'Grass', 'Vine Whip')
+
+const names = [Cyndaquil.name, Totodile.name, Chikorita.name]
+const randomSelect = Math.floor(Math.random() * names.length)
+
+let selectPoke = Array.from(document.getElementsByClassName('btn'))
+
+const pokeSelect = () => {
+  selectPoke.map((pokeButton) => {
+    pokeButton.addEventListener(
+      'click',
+      function (e) {
+        switch (e.target.value) {
+          case 'Cyndaquil':
+            player1 = e.target.value
+            computer = names[randomSelect]
+            console.log(player1, computer)
+            removePoke()
+            break
+          case 'Totodile':
+            player1 = e.target.value
+            computer = names[randomSelect]
+            console.log(player1, computer)
+            break
+          case 'Chikorita':
+            player1 = e.target.value
+            computer = names[randomSelect]
+            console.log(player1, computer)
+            break
+          default:
+            break
+        }
+      },
+      { once: true }
+    )
+  })
 }
-startButton.addEventListener('click', gameStart)
-
-// FUNCTION THAT TAKES CHOICE THAT USER PICKS AND DISPLAYS INFORMATION RELATED TO POKEMON CHOICE
-function pokeChoice(element, chosenPoke) {
-  if (playersChoice.player1) {
-    return //stops function after assigning player1 to pokemon
-  }
-  //FOR LOOP FOR POKEMON ARRAY LISTED EARLIER TO ASSIGN OPPOSITE POKEMON TO PLAYER 2
-  for (let i = 0; i < pokemons.length; i++) {
-    //select pokemons array global variable
-    const pokemonName = pokemons[i]
-    //selecting pokemon name from pokemonObjects
-    const pokemon = pokemonObjects[pokemonName]
-
-    //Assigning HP to poke value
-    let enemyPokeHP = pokemon.healthPoints
-    let playerPokeHP = pokemon.healthPoints
-
-    //Selecting ID based upon what user Pokemon clicks first
-    const pokemonID = document.getElementById(`${pokemonName}Message`)
-
-    if (chosenPoke !== pokemonName) {
-      //SELECTING OBJECT, ADDING TEXT TO WHAT PLAYER CHOOSES BASED ON PLAYER OPTION.
-      //WILL ASSIGN OPPOSITE POKEMON ONCE USER HAS SELECTED
-      playersChoice.player2 = pokemon
-      pokemonID.innerHTML = `Player 2: ${pokemonName}`
-      playerTwo = pokemonName
-    } else {
-      playersChoice.player1 = pokemon
-      pokemonID.innerHTML = `Player 1: ${pokemonName}`
-      playerOne = pokemonName
-    }
-  }
-  playerTurn = playerOne
-}
-//BATTLE SEQUENCE
-
-//Typhlosion Flamethrower event listener
-const selectFlameP = document.getElementById('FlameThrower')
-selectFlameP.addEventListener('click', () => {
-  if (playerTurn === 'Typhlosion') {
-    pokemonAttacks('Charizard')
-    playerTurn = 'Charizard'
-  }
-})
-//charizard Fire Blast event listener
-const selectfireBlastP = document.getElementById('fireBlast')
-selectfireBlastP.addEventListener('click', () => {
-  if (playerTurn === 'Charizard') {
-    pokemonAttacks('Typhlosion')
-    playerTurn = 'Typhlosion'
-  }
-})
-// function that takes parameter from event listeners above
-// has victim: pokemon being attacked, and HP being deducted by random value.
-//check loser function gets called here
-function pokemonAttacks(victim, damage = Math.floor(Math.random() * 100) + 50) {
-  pokemonObjects[victim].healthPoints -= damage
-  const hpTag = document.getElementById(`hp-${victim}`)
-  hpTag.innerText = `HP: ${pokemonObjects[victim].healthPoints}`
-  checkLoser(victim)
-}
-// check loser function/
-function checkLoser(victim) {
-  const gameOverTag = document.getElementById('gameOverMessage')
-  if (pokemonObjects[victim].healthPoints <= 0) {
-    gameOverTag.innerText = `${victim} is out of HP! GameOver!`
-    //will stop game once winner has been decided
-    document.addEventListener('click', handler, true)
-  }
+pokeSelect()
+// remove poke selection after game choice
+const removePoke = () => {
+  selectPoke.map((poke) => {
+    poke.remove()
+  })
 }
