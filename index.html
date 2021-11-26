@@ -14,39 +14,51 @@
     </header>
     <main>
       <!-- Select Pokemon -->
-      <div class="container">
-        <h2>Choose your Pokemon</h2>
-        <!-- Cyndaquil -->
-        <div id="cyndaquil">
-          <h3>Cyndaquil</h3>
+      <div id="container">
+        <h2 class="choose">Choose your Pokemon</h2>
+        <div class='selection'>
+          <!-- Cyndaquil -->
+        <div id="Cyndaquil">
+          <p>Cyndaquil</p>
           <p id="cyndHP">HP: 500</p>
-          <p>Move: Flamethrower</p>
+          
           <p>Type: Fire</p>
-          <p></p>
+          <button class="btn" value="Cyndaquil">Cyndaquil</button>
+          <button>Flamethrower</button>
+          <img src="https://64.media.tumblr.com/9a8239dc98c58a800db7426a58663746/tumblr_o2ejsyGVHj1v68t0mo4_250.gifv" alt="" class="pokeSprite" >
         </div>
         <!-- Totodile -->
-        <div id="totodile">
-          <h3>Totodile</h3>
+        <div id="Totodile">
+          <p>Totodile</p>
           <p id="totoHP">HP: 500</p>
-          <p>Move: Water Gun</p>
           <p>Type: Water</p>
-          <p></p>
+          <button class="btn" value="Totodile">Totodile</button>
+          <button>Water Gun</button>
+          <img src="https://pa1.narvii.com/6214/88cf7890ec7168d068e38f8490553f02a9ee002f_hq.gif" class="pokeSprite" alt="">
         </div>
         <!-- Chikorita -->
         <div id="Chikorita">
-          <h3>Chikorita</h3>
+          <p>Chikorita</p>
           <p id="chikHP">HP: 500</p>
-          <p>Move: Razor Leaf</p>
+          
           <p>Type: Grass</p>
-          <p></p>
-        </div>
-    
-        <!-- Button Selection -->
-        <div>
-          <button class="btn" value="Cyndaquil">Cyndaquil</button>
-          <button class="btn" value="Totodile">Totodile</button>
           <button class="btn" value="Chikorita">Chikorita</button>
+          <button>Razor Leaf</button>
+          <img id="chikoritaImg" src=https://64.media.tumblr.com/03dd1d7f37263b0915bbdeaa8e1c91f3/tumblr_o2ejsyGVHj1v68t0mo1_250.gifv alt="" class="pokeSprite" >
         </div>
+        <!-- End selection -->
+      </div>
     </main>
-  </body> <script src="index.js"></script>
+       <!-- Start Game -->
+       <div class="game">
+        <div id="player1">Player1:</div>
+        <div id="computer">Computer: </div>
+      </div>
+      <!-- Restart Game Button -->
+      <div id="restart">
+        <button onclick="restartGame()">restart?</button>
+      </div>
+  </body> 
+  <script src="index.js"></script>
+ 
 </html>

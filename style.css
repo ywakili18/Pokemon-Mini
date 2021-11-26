@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
   background-color: rgb(255, 140, 0);
+  font-family: 'Press Start 2P', cursive;
+}
+header {
+  text-align: center;
+}
+.choose {
+  text-align: center;
+}
+.selection {
+  display: flex;
+  justify-content: space-evenly;
+  width: fit-content;
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+.game {
+  display: flex;
+  justify-content: space-evenly;
+  width: fit-content;
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+#someId {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.pokeSprite {
+  height: 200px;
+  width: 200px;
 }
