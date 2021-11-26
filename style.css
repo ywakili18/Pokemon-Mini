@@ -15,7 +15,7 @@ header {
   width: fit-content;
   margin: auto;
   width: 50%;
-  border: 3px solid green;
+  border: 3px solid rgb(215, 23, 10);
   padding: 10px;
 }
 .game {
@@ -24,7 +24,7 @@ header {
   width: fit-content;
   margin: auto;
   width: 50%;
-  border: 3px solid green;
+  border: 3px solid rgb(215, 23, 10);
   padding: 10px;
 }
 #someId {
