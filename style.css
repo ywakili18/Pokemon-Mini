@@ -27,7 +27,7 @@ header {
   border: 3px solid rgb(215, 23, 10);
   padding: 10px;
 }
-#someId {
+#pokeData {
   display: flex;
   justify-content: space-between;
   width: fit-content;
