@@ -1,6 +1,6 @@
 let player1 = ''
 let computer = ''
-
+document.getElementById('restart').style.visibility = 'hidden'
 // creates a iterable array from instead of HTML document and node.
 let selectPoke = Array.from(document.getElementsByClassName('btn'))
 // create class for pokemon that
@@ -65,6 +65,7 @@ const startGame = () => {
   let computerId = document.getElementById('computer')
   playerId.innerHTML = `Player 1:`
   computerId.innerHTML = `Computer:`
+  document.getElementById('restart').style.visibility = 'visible'
   displayPokeData()
 }
 // display pokemon data when user selects
@@ -132,19 +133,10 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
   // append button move based on computerDiv
   switch (compCloneDiv.id) {
     case 'Cyndaquil':
-      computerAttack.innerHTML = Cyndaquil.move
-      computerAttack.id = Cyndaquil.move
-      compCloneDiv.appendChild(computerAttack)
       break
     case 'Totodile':
-      computerAttack.innerHTML = Totodile.move
-      computerAttack.id = Totodile.move
-      compCloneDiv.appendChild(computerAttack)
       break
     case 'Chikorita':
-      computerAttack.innerHTML = Chikorita.move
-      computerAttack.id = Chikorita.move
-      compCloneDiv.appendChild(computerAttack)
       break
     default:
       break
@@ -175,6 +167,13 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
         playerHP.innerHTML = `HP: ${pFinalHP}`
         displayId.innerHTML = `${playerCloneDiv.id} did ${randomValue1} damage to ${compCloneDiv.id}! 
         & ${compCloneDiv.id} did ${randomValue2} damage to ${playerCloneDiv.id}!`
+        checkWinner(
+          pFinalHP,
+          cFinalHP,
+          playerCloneDiv.id,
+          compCloneDiv.id,
+          pButton
+        )
       }, 500)
     })
   }
@@ -182,14 +181,16 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
   battle(playerAttack, computerAttack)
 }
 
-const checkWinner = (playerHP, computerHP) => {
-  console.log(playerHP, computerHP)
+const checkWinner = (playerHP, computerHP, pId, cId, button) => {
+  let id = document.getElementById('displayID')
 
   if (playerHP <= 0) {
-    console.log('WINNER!')
+    id.innerHTML = `Player 1 and ${pId} beat ${cId}! Winner!`
+    document.getElementById(button.id).style.visibility = 'hidden'
   }
   if (computerHP <= 0) {
-    console.log('COMP WINNSNS')
+    id.innerHTML = `${pId} fainted! You're out of pokemon and you droped $50 in panic!`
+    document.getElementById(button.id).style.visibility = 'hidden'
   }
 }
 
