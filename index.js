@@ -1,5 +1,9 @@
 let player1 = ''
 let computer = ''
+
+let playerOneTurn = false
+let compTurn = false
+
 // creates a iterable array from instead of HTML document and node.
 let selectPoke = Array.from(document.getElementsByClassName('btn'))
 // create class for pokemon that
@@ -59,6 +63,7 @@ const removePoke = () => {
 }
 // Start game
 const startGame = () => {
+  playerOneTurn = true
   let playerId = document.getElementById('player1')
   let computerId = document.getElementById('computer')
   playerId.innerHTML = `Player 1:`
@@ -74,14 +79,19 @@ const displayPokeData = () => {
   const compDiv = document.getElementById(computer)
   const compClone = compDiv.cloneNode(true)
 
-  toggleAttack(playerClone, compClone)
+  // assign playerHP and compHP values
+  playerClone.children[1].id = 'playerHP'
+  compClone.children[1].id = 'compHP'
+
   const playerAndCompDiv = document.createElement('div')
   playerAndCompDiv.appendChild(playerClone)
   playerAndCompDiv.appendChild(compClone)
 
   playerAndCompDiv.id = 'pokeData'
   document.body.appendChild(playerAndCompDiv)
+  toggleAttack(playerClone, compClone)
 }
+
 // show attack buttons when pokemon have been selected
 function toggleAttack(playerCloneDiv, compCloneDiv) {
   // creating buttons below
@@ -128,6 +138,31 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
     default:
       break
   }
+
+  function battle(pButton, cButton) {
+    let startingHP = 500
+    const damage = Math.floor(Math.random() * 50)
+    if (playerOneTurn) {
+      pButton.onclick = function () {
+        let x = document.getElementById('compHP')
+        let newHP = startingHP - damage
+        x.innerHTML = `HP: ${newHP}`
+        playerOneTurn = false
+        compTurn = true
+      }
+    }
+    if (compTurn) {
+      cButton.onclick = function () {
+        let x = document.getElementById('playerHP')
+        let newHP = startingHP - damage
+        x.innerHTML = `HP: ${newHP}`
+        compTurn = false
+        playerOneTurn = true
+      }
+    }
+  }
+
+  battle(playerAttack, computerAttack)
 }
 
 // restart game button
