@@ -1,9 +1,6 @@
 let player1 = ''
 let computer = ''
 
-let playerOneTurn = false
-let compTurn = false
-
 // creates a iterable array from instead of HTML document and node.
 let selectPoke = Array.from(document.getElementsByClassName('btn'))
 // create class for pokemon that
@@ -18,8 +15,9 @@ const Totodile = new Pokemon('Totodile', 100, 'Water', 'Water Gun')
 const Chikorita = new Pokemon('Chikorita', 100, 'Grass', 'Vine Whip')
 
 // create a array to call each pokemon name from earlier
-// create a random selection for comptuer to choose pokemon from array
 const names = [Cyndaquil.name, Totodile.name, Chikorita.name]
+
+// create a random selection for comptuer to choose pokemon from array
 const randomSelect = Math.floor(Math.random() * names.length)
 
 // Select Pokemon
@@ -63,7 +61,6 @@ const removePoke = () => {
 }
 // Start game
 const startGame = () => {
-  playerOneTurn = true
   let playerId = document.getElementById('player1')
   let computerId = document.getElementById('computer')
   playerId.innerHTML = `Player 1:`
@@ -83,12 +80,26 @@ const displayPokeData = () => {
   playerClone.children[1].id = 'playerHP'
   compClone.children[1].id = 'compHP'
 
+  // creating divs for data and display
   const playerAndCompDiv = document.createElement('div')
+
   playerAndCompDiv.appendChild(playerClone)
   playerAndCompDiv.appendChild(compClone)
-
   playerAndCompDiv.id = 'pokeData'
-  document.body.appendChild(playerAndCompDiv)
+
+  const displayDiv = document.createElement('div')
+  displayDiv.id = 'displayDiv'
+  const createH3 = document.createElement('h3')
+  createH3.id = 'displayID'
+  createH3.innerHTML = 'Game Start!'
+  displayDiv.appendChild(createH3)
+
+  const outerDiv = document.createElement('div')
+  outerDiv.id = 'gameContainer'
+  outerDiv.appendChild(playerAndCompDiv)
+  outerDiv.appendChild(displayDiv)
+  document.body.appendChild(outerDiv)
+
   toggleAttack(playerClone, compClone)
 }
 
@@ -138,31 +149,48 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
     default:
       break
   }
-
-  function battle(pButton, cButton) {
+  // Battle
+  function battle(pButton) {
+    let playerHP = document.getElementById('playerHP')
+    let computerHP = document.getElementById('compHP')
     let startingHP = 500
-    const damage = Math.floor(Math.random() * 50)
-    if (playerOneTurn) {
-      pButton.onclick = function () {
-        let x = document.getElementById('compHP')
-        let newHP = startingHP - damage
-        x.innerHTML = `HP: ${newHP}`
-        playerOneTurn = false
-        compTurn = true
-      }
-    }
-    if (compTurn) {
-      cButton.onclick = function () {
-        let x = document.getElementById('playerHP')
-        let newHP = startingHP - damage
-        x.innerHTML = `HP: ${newHP}`
-        compTurn = false
-        playerOneTurn = true
-      }
-    }
+    let displayId = document.getElementById('displayID')
+
+    playerHP.value = startingHP
+    computerHP.value = startingHP
+
+    let pFinalHP = playerHP.value
+    let cFinalHP = computerHP.value
+
+    // event listner for damage
+    document.getElementById(pButton.id).addEventListener('click', function () {
+      let randomValue1 = Math.floor(Math.random() * 50)
+      let randomValue2 = Math.floor(Math.random() * 50)
+
+      setTimeout(() => {
+        cFinalHP = cFinalHP - randomValue1
+        computerHP.innerHTML = `HP: ${cFinalHP}`
+
+        pFinalHP = pFinalHP - randomValue2
+        playerHP.innerHTML = `HP: ${pFinalHP}`
+        displayId.innerHTML = `${playerCloneDiv.id} did ${randomValue1} damage to ${compCloneDiv.id}! 
+        & ${compCloneDiv.id} did ${randomValue2} damage to ${playerCloneDiv.id}!`
+      }, 500)
+    })
   }
 
   battle(playerAttack, computerAttack)
+}
+
+const checkWinner = (playerHP, computerHP) => {
+  console.log(playerHP, computerHP)
+
+  if (playerHP <= 0) {
+    console.log('WINNER!')
+  }
+  if (computerHP <= 0) {
+    console.log('COMP WINNSNS')
+  }
 }
 
 // restart game button

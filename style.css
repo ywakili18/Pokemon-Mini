@@ -19,7 +19,7 @@ header {
   border: 3px solid rgb(215, 23, 10);
   padding: 10px;
 }
-.game {
+#game {
   display: flex;
   justify-content: space-evenly;
   width: fit-content;
@@ -27,6 +27,7 @@ header {
   width: 50%;
   border: 3px solid rgb(215, 23, 10);
   padding: 10px;
+  flex-wrap: wrap;
 }
 #pokeData {
   display: flex;
@@ -41,4 +42,12 @@ header {
 .pokeSprite {
   height: 200px;
   width: 200px;
+}
+#gameContainer {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+}
+h3 {
+  text-align: center;
 }
