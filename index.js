@@ -1,9 +1,12 @@
 let player1 = ''
 let computer = ''
+// hides start game until game has started
+
 document.getElementById('restart').style.visibility = 'hidden'
+
 // creates a iterable array from instead of HTML document and node.
 let selectPoke = Array.from(document.getElementsByClassName('btn'))
-// create class for pokemon that
+
 class Pokemon {
   constructor(name, hp, type, move) {
     ;(this.name = name), (this.hp = hp), (this.type = type), (this.move = move)
@@ -28,25 +31,20 @@ const pokeSelect = () => {
         case 'Cyndaquil':
           player1 = e.target.value
           computer = names[randomSelect]
-          removePoke()
-          startGame()
           break
         case 'Totodile':
           player1 = e.target.value
           computer = names[randomSelect]
-          removePoke()
-          startGame()
           break
         case 'Chikorita':
           player1 = e.target.value
           computer = names[randomSelect]
-          removePoke()
-          startGame()
-
           break
         default:
           break
       }
+      removePoke()
+      startGame()
     })
   })
 }
@@ -59,6 +57,7 @@ const removePoke = () => {
   })
   document.getElementById('container').style.visibility = 'hidden'
 }
+
 // Start game
 const startGame = () => {
   let playerId = document.getElementById('player1')
@@ -88,13 +87,17 @@ const displayPokeData = () => {
   playerAndCompDiv.appendChild(compClone)
   playerAndCompDiv.id = 'pokeData'
 
+  // display div
   const displayDiv = document.createElement('div')
   displayDiv.id = 'displayDiv'
+
+  // display status
   const createH3 = document.createElement('h3')
   createH3.id = 'displayID'
   createH3.innerHTML = 'Game Start!'
   displayDiv.appendChild(createH3)
 
+  // outer most div, assign it to game container
   const outerDiv = document.createElement('div')
   outerDiv.id = 'gameContainer'
   outerDiv.appendChild(playerAndCompDiv)
@@ -148,9 +151,11 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
     let startingHP = 500
     let displayId = document.getElementById('displayID')
 
+    // assign starting hp value to 500
     playerHP.value = startingHP
     computerHP.value = startingHP
 
+    // final value after each attack, will be displayed
     let pFinalHP = playerHP.value
     let cFinalHP = computerHP.value
 
@@ -181,6 +186,7 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
   battle(playerAttack, computerAttack)
 }
 
+// check winner function
 const checkWinner = (playerHP, computerHP, pId, cId, button) => {
   let id = document.getElementById('displayID')
 
