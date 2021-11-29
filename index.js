@@ -195,7 +195,7 @@ const checkWinner = (playerHP, computerHP, pId, cId, button) => {
     document.getElementById(button.id).style.visibility = 'hidden'
   }
   if (computerHP <= 0) {
-    id.innerHTML = `${pId} fainted! You're out of pokemon and you droped $50 in panic!`
+    id.innerHTML = `${pId} fainted! You're out of pokemon and you dropped $50 in panic!`
     document.getElementById(button.id).style.visibility = 'hidden'
   }
 }
