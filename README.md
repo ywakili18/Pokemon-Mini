@@ -1,4 +1,4 @@
-# Pokemon Gold Mini
+# 🌟Pokemon Gold Mini 🌟
 
 ## Yousof Wakili
 
@@ -6,7 +6,7 @@
 
 ![Page 1](./images/screenshot.png)
 
-## Technologies
+## 🌟Technologies🌟
 
 ---
 
@@ -27,7 +27,7 @@
 
 ---
 
-**Getting Started**
+## **Getting Started** ✅
 
 To create a game like this will require the following:
 
@@ -39,7 +39,7 @@ To create a game like this will require the following:
 
 ---
 
-**Game Logic**
+## **Game Logic** 🤔
 
 1. Utilizing objects/classes, can create two unique Pokemon containing data about each one.
 2. Adding if/else conditional to check for winner/starting game/restarting game. This will also be the case for when user chooses to attack and each attack will take away from current HP and display current HP points based upon last attack.
