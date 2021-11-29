@@ -4,24 +4,61 @@ body {
   color: white;
   font-family: 'Press Start 2P', cursive;
   color: rgb(199, 38, 33);
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    width: fit-content;
+  }
+  nav {
+    font-size: small;
+    text-align: center;
+    justify-self: center;
+  }
+  .choose {
+    font-size: small;
+  }
+  .selection {
+    width: fit-content;
+  }
+  #game {
+    width: fit-content;
+    font-size: small;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  body {
+    width: fit-content;
+  }
 }
 nav {
   text-align: center;
-  border: 1px solid;
+
   width: auto;
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  nav {
+    font-size: small;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .choose {
   text-align: center;
 }
+
 .selection {
   display: flex;
   justify-content: space-evenly;
   width: fit-content;
   margin: auto;
   width: 50%;
-
   padding: 10px;
 }
+
 #game {
   display: flex;
   justify-content: space-evenly;
@@ -31,13 +68,13 @@ nav {
   padding: 10px;
   flex-wrap: wrap;
 }
+
 #pokeData {
   display: flex;
-  justify-content: space-between;
+
   width: fit-content;
   margin: auto;
-  width: 50%;
-  border: 3px solid green;
+
   padding: 10px;
 }
 
@@ -46,7 +83,6 @@ nav {
   width: 200px;
 }
 #gameContainer {
-  border: 1px solid white;
   display: flex;
   flex-direction: column;
 }
@@ -64,4 +100,8 @@ button {
 button:hover {
   background-color: rgb(199, 38, 33);
   color: orange;
+}
+#restart {
+  display: flex;
+  justify-content: center;
 }
