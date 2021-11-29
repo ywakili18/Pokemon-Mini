@@ -2,7 +2,7 @@
 
 ## Yousof Wakili
 
-[GitHub](https://github.com/ywakili18) | [Deployed](http://yousofwpokemongoldmini.surge.sh/) | [ Portfolio](youseffect.com)
+[GitHub](https://github.com/ywakili18) | [Deployed](http://pokemongoldmini.surge.sh/) | [ Portfolio](youseffect.com)
 
 ![Page 1](./images/screenshot.png)
 
