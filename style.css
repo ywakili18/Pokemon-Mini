@@ -83,7 +83,9 @@ nav {
   height: 200px;
   width: 200px;
 }
+
 #gameContainer {
+  transition: ease;
   display: flex;
   flex-direction: column;
 }
@@ -94,13 +96,15 @@ button {
   color: rgb(199, 38, 33);
   background-color: orange;
   font-family: 'Press Start 2P', cursive;
-  transition-duration: 0.4s;
+  transition-duration: 0.25s;
   cursor: pointer;
   padding: 10px;
   font-size: x-small;
 }
+
 button:hover {
   background-color: rgb(199, 38, 33);
+  transform: scale(1.2);
   color: orange;
 }
 #restart {
