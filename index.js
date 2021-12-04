@@ -2,10 +2,10 @@ let player1 = ''
 let computer = ''
 // hides start game until game has started
 
-document.getElementById('restart').style.visibility = 'hidden'
+document.querySelector('#restart').style.visibility = 'hidden'
 
 // creates a iterable array from instead of HTML document and node.
-let selectPoke = Array.from(document.getElementsByClassName('btn'))
+let selectPoke = Array.from(document.querySelectorAll('.btn'))
 
 class Pokemon {
   constructor(name, hp, type, move) {
@@ -55,16 +55,16 @@ const removePoke = () => {
   selectPoke.map((poke) => {
     poke.remove()
   })
-  document.getElementById('container').style.visibility = 'hidden'
+  document.querySelector('#container').style.visibility = 'hidden'
 }
 
 // Start game
 const startGame = () => {
-  let playerId = document.getElementById('player1')
-  let computerId = document.getElementById('computer')
+  let playerId = document.querySelector('#player1')
+  let computerId = document.querySelector('#computer')
   playerId.innerHTML = `Player 1:`
   computerId.innerHTML = `Computer:`
-  document.getElementById('restart').style.visibility = 'visible'
+  document.querySelector('#restart').style.visibility = 'visible'
   displayPokeData()
 }
 // display pokemon data when user selects
@@ -146,10 +146,10 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
   }
   // Battle
   function battle(pButton) {
-    let playerHP = document.getElementById('playerHP')
-    let computerHP = document.getElementById('compHP')
+    let playerHP = document.querySelector('#playerHP')
+    let computerHP = document.querySelector('#compHP')
     let startingHP = 500
-    let displayId = document.getElementById('displayID')
+    let displayId = document.querySelector('#displayID')
 
     // assign starting hp value to 500
     playerHP.value = startingHP
@@ -179,7 +179,7 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
           compCloneDiv.id,
           pButton
         )
-      }, 500)
+      }, 100)
     })
   }
 
@@ -188,7 +188,7 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
 
 // check winner function
 const checkWinner = (playerHP, computerHP, pId, cId, button) => {
-  let id = document.getElementById('displayID')
+  let id = document.querySelector('#displayID')
 
   if (playerHP <= 0) {
     id.innerHTML = `Player 1 and ${pId} beat ${cId}! Winner!`
