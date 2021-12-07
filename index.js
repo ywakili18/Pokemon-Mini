@@ -190,11 +190,11 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
 const checkWinner = (playerHP, computerHP, pId, cId, button) => {
   let id = document.querySelector('#displayID')
 
-  if (playerHP <= 0) {
+  if (computerHP <= 0) {
     id.innerHTML = `Player 1 and ${pId} beat ${cId}! Winner!`
     document.getElementById(button.id).style.visibility = 'hidden'
   }
-  if (computerHP <= 0) {
+  if (playerHP <= 0) {
     id.innerHTML = `${pId} fainted! You're out of pokemon and you dropped $50 in panic!`
     document.getElementById(button.id).style.visibility = 'hidden'
   }
