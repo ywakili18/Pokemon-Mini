@@ -7,6 +7,9 @@ body {
   text-align: center;
   font-size: x-small;
 }
+h1 {
+  font-size: x-large;
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   body {
     width: fit-content;
@@ -84,11 +87,6 @@ nav {
   width: 200px;
 }
 
-#gameContainer {
-  transition: ease;
-  display: flex;
-  flex-direction: column;
-}
 h3 {
   text-align: center;
 }
@@ -103,7 +101,7 @@ button {
 }
 
 button:hover {
-  background-color: rgb(199, 38, 33);
+  background-color: rgb(177, 12, 6);
   transform: scale(1.2);
   color: orange;
 }
@@ -111,4 +109,20 @@ button:hover {
 #restart {
   display: flex;
   justify-content: center;
+}
+a {
+  color: rgb(199, 38, 33);
+}
+a:hover {
+  color: rgb(255, 196, 0);
+  border: 1px solid black;
+  background-color: rgb(121, 21, 8);
+  transition: 0.5s;
+}
+#contact {
+  text-align: right;
+}
+#contact p {
+  font-size: 0.5em;
+  margin-top: 2em;
 }
