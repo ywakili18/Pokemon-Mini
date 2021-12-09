@@ -1,3 +1,4 @@
+'use strict'
 let player1 = ''
 let computer = ''
 // hides start game until game has started
@@ -164,7 +165,7 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
       let randomValue1 = Math.floor(Math.random() * 50)
       let randomValue2 = Math.floor(Math.random() * 50)
 
-      setTimeout(() => {
+      const damage = () => {
         cFinalHP = cFinalHP - randomValue1
         computerHP.innerHTML = `HP: ${cFinalHP}`
 
@@ -179,7 +180,8 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
           compCloneDiv.id,
           pButton
         )
-      }, 100)
+      }
+      damage()
     })
   }
 
