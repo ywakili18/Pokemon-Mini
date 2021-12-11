@@ -21,25 +21,23 @@ const Chikorita = new Pokemon('Chikorita', 100, 'Grass', 'Vine Whip')
 // create a array to call each pokemon name from earlier
 const names = [Cyndaquil.name, Totodile.name, Chikorita.name]
 
-// create a random selection for comptuer to choose pokemon from array
+// create a random selection for computer to choose pokemon from array
 const randomSelect = Math.floor(Math.random() * names.length)
 
 // Select Pokemon
 const pokeSelect = () => {
   selectPoke.map((pokeButton) => {
     pokeButton.addEventListener('click', function (e) {
+      computer = names[randomSelect]
       switch (e.target.value) {
         case 'Cyndaquil':
           player1 = e.target.value
-          computer = names[randomSelect]
           break
         case 'Totodile':
           player1 = e.target.value
-          computer = names[randomSelect]
           break
         case 'Chikorita':
           player1 = e.target.value
-          computer = names[randomSelect]
           break
         default:
           break
@@ -134,17 +132,7 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
     default:
       break
   }
-  // append button move based on computerDiv
-  switch (compCloneDiv.id) {
-    case 'Cyndaquil':
-      break
-    case 'Totodile':
-      break
-    case 'Chikorita':
-      break
-    default:
-      break
-  }
+
   // Battle
   function battle(pButton) {
     let playerHP = document.querySelector('#playerHP')
@@ -161,7 +149,7 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
     let cFinalHP = computerHP.value
 
     // event listner for damage
-    document.getElementById(pButton.id).addEventListener('click', function () {
+    document.getElementById(pButton.id).addEventListener('click', () => {
       let randomValue1 = Math.floor(Math.random() * 50)
       let randomValue2 = Math.floor(Math.random() * 50)
 
@@ -173,13 +161,15 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
         playerHP.innerHTML = `HP: ${pFinalHP}`
         displayId.innerHTML = `${playerCloneDiv.id} did ${randomValue1} damage to ${compCloneDiv.id}! 
         & ${compCloneDiv.id} did ${randomValue2} damage to ${playerCloneDiv.id}!`
-        checkWinner(
-          pFinalHP,
-          cFinalHP,
-          playerCloneDiv.id,
-          compCloneDiv.id,
-          pButton
-        )
+
+        const winnerData = {
+          playHP: pFinalHP,
+          compHP: cFinalHP,
+          pDivId: playerCloneDiv.id,
+          cDivId: compCloneDiv.id,
+          button: pButton
+        }
+        checkWinner(winnerData)
       }
       damage()
     })
@@ -189,16 +179,16 @@ function toggleAttack(playerCloneDiv, compCloneDiv) {
 }
 
 // check winner function
-const checkWinner = (playerHP, computerHP, pId, cId, button) => {
+const checkWinner = (winnerData) => {
   let id = document.querySelector('#displayID')
 
-  if (computerHP <= 0) {
-    id.innerHTML = `Player 1 and ${pId} beat ${cId}! Winner!`
-    document.getElementById(button.id).style.visibility = 'hidden'
+  if (winnerData.compHP <= 0) {
+    id.innerHTML = `Player 1 and ${winnerData.pDivId} beat ${winnerData.cDivId}! Winner!`
+    document.getElementById(winnerData.button.id).style.visibility = 'hidden'
   }
-  if (playerHP <= 0) {
-    id.innerHTML = `${pId} fainted! You're out of pokemon and you dropped $50 in panic!`
-    document.getElementById(button.id).style.visibility = 'hidden'
+  if (winnerData.playHP <= 0) {
+    id.innerHTML = `${winnerData.pDivId}  fainted! You're out of pokemon and you dropped $50 in panic!`
+    document.getElementById(winnerData.button.id).style.visibility = 'hidden'
   }
 }
 
