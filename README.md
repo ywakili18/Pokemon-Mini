@@ -8,13 +8,11 @@
 
 ## Description🗒
 
----
-
 #### An ode to a personal favorite game of mines, Pokemon Gold for the Gameboy Color. Pick between the three johto starters and battle to see who is the winner!
 
-## Purpose of building this project 🤔
-
 ---
+
+## Purpose of building this project 🤔
 
 To build a javascript game manipulating the DOM (Document Object Model), event listeners, work with classes, objects, arrays, for manipulating the data through the flow of the game. Wanted to also work with array methods and finding ways to make the game run effciently.
 
